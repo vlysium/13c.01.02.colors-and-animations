@@ -12,6 +12,12 @@
   --secondary-color-dark: #10101b;
   --accent-color-1: #20c284;
   --accent-color-2: #1260b7;
+  --accent-color-2-dark: #0e488b;
+
+  --white: #f8f8f8;
+}
+
+[data-theme="dark"]:root {
 }
 
 /* Fonts */
@@ -57,12 +63,27 @@ p {
 }
 
 a {
+  position: relative;
   text-decoration: none;
-  color: var(--secondary-color);
+  color: var(--accent-color-2);
 }
 
-a:hover {
-  text-decoration: underline;
+a::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  transform-origin: right;
+  background-color: var(--accent-color-2);
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0%);
+  transition: 0.25s transform;
+}
+
+a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
 }
 
 /* UI Elements */
@@ -77,6 +98,11 @@ button {
   text-decoration: none;
   background-color: var(--accent-color-2);
   color: var(--primary-color);
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: var(--accent-color-2-dark);
 }
 
 .dark_button {
@@ -90,8 +116,8 @@ input[type="text"] {
   padding: 1rem 1rem;
   font-size: 1rem;
   text-align: left;
-  background-color: var(--primary-color);
-  border-color: var(--secondary-color);
+  background-color: var(--white);
+  border-color: var(--accent-color-2-dark);
   color: var(--secondary-color);
 }
 
@@ -102,6 +128,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: var(--secondary-color-dark);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 nav a {
@@ -223,6 +252,7 @@ header button {
   padding: 2rem;
   align-items: center;
   justify-content: space-around;
+  background-color: var(--white);
 }
 
 .highlight div {
@@ -253,7 +283,7 @@ header button {
   padding: 2rem;
   align-items: center;
   justify-content: space-around;
-  background-color: var(--primary-color);
+  background-color: var(--white);
 }
 
 #request div {
@@ -261,11 +291,15 @@ header button {
   min-width: 300px;
 }
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
 /* Footer */
 footer {
   display: flex;
   padding: 5vh 2rem;
-  align-items: top;
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: var(--secondary-color);
@@ -285,7 +319,6 @@ footer a {
 footer section.left {
   display: flex;
   max-width: 50vw;
-  align-items: top;
   flex-wrap: wrap;
   justify-content: space-between;
 }
