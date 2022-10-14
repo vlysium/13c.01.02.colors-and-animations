@@ -3,6 +3,9 @@
   margin: 0px;
   padding: 0px;
   list-style: none;
+
+  transition-property: color, background-color;
+  transition-duration: 0.3s;
 }
 
 /* Colors */
@@ -21,9 +24,9 @@
   --primary-color: #151522;
   --secondary-color: #eef2f5;
   --secondary-color-dark: #10101b;
-  --accent-color-1: #20c284;
-  --accent-color-2: #1260b7;
-  --accent-color-2-dark: #0e488b;
+  --accent-color-1: #20c2b5;
+  --accent-color-2: #8750ce;
+  --accent-color-2-dark: #7834af;
 
   --white: #10101b;
 }
