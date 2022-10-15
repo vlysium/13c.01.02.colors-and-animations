@@ -4,8 +4,8 @@
   padding: 0px;
   list-style: none;
 
-  transition-property: color, background-color;
-  transition-duration: 0.3s;
+  /*transition-property: color, background-color;
+  transition-duration: 0.3s;*/
 }
 
 /* Colors */
@@ -380,4 +380,11 @@ footer section div {
     font-size: 3.052rem;
     line-height: 3.5rem;
   }
+}
+
+/* motion one */
+
+.animate-inview {
+  opacity: 0;
+  transform: translate(0, 8px);
 }
